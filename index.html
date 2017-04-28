@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="my_drop_zone">
+        <div id="drop_zone">
+          <p id="droptext">Drop SVG file here</p>
+        </div>
+      <form id="svgpng">
+        <label class="control control-radio">SVG
+          <input type="radio" name="ext" value="SVG" checked="checked">
+          <div class="control-indicator"></div>
+        </label>
+        <label class="control control-radio">PNG
+          <input type="radio" name="ext" value="PNG">
+          <div class="control-indicator"></div>
+        </label>
+        <input type="color" id="html5colorpicker" name="color" value="" onchange="clickColor(0, -1, -1, 5)" style="width:45px;">
+      </form>
+    </div>
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/popup.js"></script>
+  </body>
+</html>

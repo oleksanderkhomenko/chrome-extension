@@ -1,0 +1,119 @@
+#my_drop_zone {
+  position: absolute;
+  left: 50%;
+  margin-left: -305px;
+  top: 50%;
+  margin-top: -150px;
+  width: 610px;
+  height: 300px;
+  background-color: #E0E0D1;
+  z-index: 10000000500;
+}
+
+#drop_zone {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  z-index: 10000000511;
+  border: 2px dashed #92ddf1;
+  border-radius: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+#file_select {
+  display: none;
+}
+
+#svgpng {
+  background-color: #92ddf1;
+  margin-top: 2px;
+  height: 24px;
+  display: flex;
+  justify-content: space-around;
+}
+
+#droptext {
+  font-size: 34px;
+}
+
+.control {
+  font-size: 18px;
+  position: relative;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control-indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: #e6e6e6;
+}
+
+.control:hover input ~ .control-indicator,
+.control input:focus ~ .control-indicator {
+  background: #ccc;
+}
+
+.control input:checked ~ .control-indicator {
+  background: #2aa1c0;
+}
+
+.control:hover input:not([disabled]):checked ~ .control-indicator,
+.control input:checked:focus ~ .control-indicator {
+  background: #0e647d;
+}
+
+.control input:disabled ~ .control-indicator {
+  pointer-events: none;
+  opacity: .6;
+  background: #e6e6e6;
+}
+
+.control-indicator:after {
+  position: absolute;
+  display: none;
+  content: '';
+}
+
+.control input:checked ~ .control-indicator:after {
+  display: block;
+}
+
+.control-checkbox .control-indicator:after {
+  top: 4px;
+  left: 8px;
+  width: 3px;
+  height: 8px;
+  transform: rotate(45deg);
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+}
+
+.control-checkbox input:disabled ~ .control-indicator:after {
+  border-color: #7b7b7b;
+}
+
+.control-radio .control-indicator:after {
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+}
+
+.control-radio input:disabled ~ .control-indicator:after {
+  background: #7b7b7b;
+}

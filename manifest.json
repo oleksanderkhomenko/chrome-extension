@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "Change SVG color",
+  "version": "0.1",
+
+  "icons": {
+    "16" : "images/16x16.png",
+    "128" : "images/128x128.png"
+  },
+  "content_scripts":
+    [
+      {"matches": [ "http://*/*", "https://*/*", "file:///*/*"], "css": ["css/style.css"]}
+    ],
+  "permissions": ["background", "tabs", "http://*/*", "https://*/*"],
+  "background": {
+    "scripts": ["js/background.js", "js/jquery-2.1.4.min.js"],
+    "persistence": false
+  },
+  "browser_action": {
+    "default_title": "Drag and drop your SVG file here",
+    "default_icon": "images/16x16.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
